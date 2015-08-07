@@ -1,4 +1,4 @@
-<?php namespace Mews\Captcha;
+<?php namespace Closca\Captcha;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,8 +21,8 @@ class CaptchaServiceProvider extends ServiceProvider
         $this->package('mews/captcha');
 
         require __DIR__ . '/../../routes.php';
-        $this->app->validator->resolver(function ($translator, $data, $rules, $messages) {
-            return new CaptchaValidator($translator, $data, $rules, $messages);
+        $this->app['validator']->extend('captcha', function ($attribute, $value, $parameters) {
+            return \Captcha::check($value);
         });
     }
 

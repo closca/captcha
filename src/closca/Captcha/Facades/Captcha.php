@@ -1,4 +1,4 @@
-<?php namespace Mews\Captcha\Facades;
+<?php namespace Closca\Captcha\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

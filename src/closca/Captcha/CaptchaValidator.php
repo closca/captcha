@@ -1,4 +1,4 @@
-<?php namespace Mews\Captcha;
+<?php namespace Closca\Captcha;
 
 use Illuminate\Validation\Validator;
 
